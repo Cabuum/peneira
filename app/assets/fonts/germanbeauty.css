@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'GermanBeautyRegular';
+    src: url('germanbeauty.eot');
+    src: url('germanbeauty.eot') format('embedded-opentype'),
+         url('germanbeauty.woff2') format('woff2'),
+         url('germanbeauty.woff') format('woff'),
+         url('germanbeauty.ttf') format('truetype'),
+         url('germanbeauty.svg#GermanBeautyRegular') format('svg');
+}

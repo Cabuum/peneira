@@ -8,12 +8,12 @@ Bundler.require(*Rails.groups)
 
 module Peneeira
   class Application < Rails::Application
-    config.assets.enabled = true
-    config.assets.compile = true
+    # config.assets.enabled = true
+    # config.assets.compile = true
     config.exceptions_app = self.routes
 
     # Add the fonts path
-    config.assets.paths << Rails.root.join('app', 'assets', 'fonts', 'videos')
+    config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
     
     # Precompile additional assets
 

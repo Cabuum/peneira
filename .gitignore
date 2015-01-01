@@ -14,3 +14,6 @@
 
 # Uploads with CarrierWave
 /public/uploads/*
+
+# Assets (idk if it's good or not)
+/public/assets/*
