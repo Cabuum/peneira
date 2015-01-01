@@ -1,21 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
   <title>peneira.co - Aproximando o sonho de grandes atletas aos olhos de quem precisa ver!</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-
-  <%= csrf_meta_tags %>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+  <meta name="description" content="Peneira | Ajudando Olheiros a encontrarem seus Craques"/>
+  <meta name="author" content="Peneira"/>
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon"/>
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon"/>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
 </head>
 <body>
 
-<div class="container" id="content">
-  <div class="row template">
-    <%= yield %>
-  </div>
-</div>
+  <header>
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container text-center">
+        <div class="navbar-header"> <%= link_to 'Peneira', root_path, class: 'brand'  %> </div>
+      </div>
+    </nav>
+  </header>
 
+  <%= yield %>
+
+  <footer class="container-fluid footer text-center">
+    <div class="container">
+      <div class="col-md-4 text-center">
+        <h1 class="footer-title">Como Usar</h1>
+        <ul class="footer-list">
+          <li><a href="#" target="_blank">Olheiros</a></li>
+          <li><a href="#" t="t" text-centerarget="_blank">Jogadores</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4 text-center">
+        <h1 class="footer-title">Company</h1>
+        <ul class="footer-list">
+          <li><a href="#" target="_blank">Help</a></li>
+          <li><a href="#" target="_blank">About us</a></li>
+          <li><a href="#" target="_blank">Contact</a></li>
+          <li><a href="#" target="_blank">Careers</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4 text-center">
+        <h1 class="footer-title">Social</h1>
+        <ul class="footer-list">
+          <li><a href="#" target="_blank"><i class="fa social-icon fa-facebook"></i>Facebook</a></li>
+          <li><a href="#" target="_blank"><i class="fa social-icon fa-twitter"></i>Twitter</a></li>
+          <li><a href="#" target="_blank"><i class="fa social-icon fa-google-plus"></i>Google +</a></li>
+          <li><a href="#" target="_blank"><i class="fa social-icon fa-github"></i>GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>
 </html>
