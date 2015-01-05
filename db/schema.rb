@@ -52,11 +52,11 @@ ActiveRecord::Schema.define(version: 20141230043119) do
   end
 
   create_table "clubs", force: :cascade do |t|
-    t.string   "name"
+    t.string   "name",       limit: 100
     t.date     "founded"
     t.integer  "address_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   add_index "clubs", ["address_id"], name: "index_clubs_on_address_id", using: :btree

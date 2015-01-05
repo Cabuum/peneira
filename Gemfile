@@ -17,7 +17,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'rails-assets-normalize-scss', '~> 3.0.1'
 
 # Bootstrap a framework css
-gem 'rails-assets-bootstrap'
+#gem 'rails-assets-bootstrap'
 
 # Icon font pack
 gem 'rails-assets-font-awesome'
@@ -49,7 +49,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 
 # Use jquery as the JavaScript library
-gem 'jquery-rails'
+#gem 'jquery-rails'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
