@@ -1,0 +1,6 @@
+en:
+  enumerations:
+    foot:
+      left: "Left"
+      right: "Right"
+      ambidextrous: "Ambidextrous"

@@ -1,0 +1,6 @@
+en:
+  enumerations:
+    player_category:
+      professional: "Professional"
+      junior: "Junior"
+      base: "Base"

@@ -4,8 +4,8 @@ default: &default
   database:
   pool: 5
   host: "localhost"
-  username: bruno
-  password: '[ 09 postgresbruno ]'
+  username: name
+  password: passwd
 
 development:
   <<: *default

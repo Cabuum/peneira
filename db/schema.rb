@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141230043119) do
+ActiveRecord::Schema.define(version: 20150131040917) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,14 +30,14 @@ ActiveRecord::Schema.define(version: 20141230043119) do
     t.float    "height"
     t.float    "weight"
     t.boolean  "allow_to_travel"
-    t.integer  "foot_id"
-    t.integer  "position_id"
+    t.integer  "foot"
+    t.integer  "position"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
 
-  add_index "athletes", ["foot_id"], name: "index_athletes_on_foot_id", using: :btree
-  add_index "athletes", ["position_id"], name: "index_athletes_on_position_id", using: :btree
+  add_index "athletes", ["foot"], name: "index_athletes_on_foot", using: :btree
+  add_index "athletes", ["position"], name: "index_athletes_on_position", using: :btree
   add_index "athletes", ["user_id"], name: "index_athletes_on_user_id", using: :btree
 
   create_table "authorizations", force: :cascade do |t|
@@ -47,8 +47,8 @@ ActiveRecord::Schema.define(version: 20141230043119) do
     t.string   "token"
     t.string   "secret"
     t.string   "username",   limit: 40
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
   end
 
   create_table "clubs", force: :cascade do |t|
@@ -60,24 +60,6 @@ ActiveRecord::Schema.define(version: 20141230043119) do
   end
 
   add_index "clubs", ["address_id"], name: "index_clubs_on_address_id", using: :btree
-
-  create_table "foots", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "player_categories", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "positions", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "preferences", force: :cascade do |t|
     t.boolean  "share_email"
@@ -110,26 +92,23 @@ ActiveRecord::Schema.define(version: 20141230043119) do
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
+    t.string   "unconfirmed_email"
     t.string   "name",                   limit: 30
     t.string   "last_name",              limit: 30
     t.string   "phone",                  limit: 14
     t.text     "bio"
-    t.integer  "address_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "preference_id"
     t.string   "user_type",              limit: 7
-    t.string   "unconfirmed_email"
     t.string   "image"
+    t.integer  "address_id"
+    t.integer  "preference_id"
+    t.datetime "created_at",                                     null: false
+    t.datetime "updated_at",                                     null: false
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["preference_id"], name: "index_users_on_preference_id", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
-  add_foreign_key "athletes", "foots"
-  add_foreign_key "athletes", "positions"
   add_foreign_key "athletes", "users"
   add_foreign_key "clubs", "addresses"
   add_foreign_key "scouts", "clubs"

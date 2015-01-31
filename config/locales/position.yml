@@ -1,0 +1,15 @@
+en:
+  enumerations:
+    position:
+      goalkeeper: "Goalkeeper"
+      centre_back: "Centre_back"
+      sweeper: "Sweeper"
+      full_back: "Full_back"
+      wing_back: "Wing_back"
+      centre_midfield: "Centre_midfield"
+      defensive_midfield: "Defensive_midfield"
+      attacking_midfield: "Attacking_midfield"
+      wide_midfield: "Wide_midfield"
+      centre_forward: "Centre_forward"
+      second_striker: "Second_striker"
+      winger: "Winger"

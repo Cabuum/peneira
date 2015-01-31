@@ -1,85 +1,70 @@
 source 'https://rubygems.org'
 source 'https://rails-assets.org'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+# ruby '2.2.0'
+
 gem 'rails', '4.2.0'
 
-# Use postgresql as the database for Active Record
-gem 'pg'
-
-# Use thin as web server
-gem 'thin'
-
-# Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
-
-# Normalize the I.E's
-gem 'rails-assets-normalize-scss', '~> 3.0.1'
-
-# Bootstrap a framework css
-#gem 'rails-assets-bootstrap'
-
-# Icon font pack
-gem 'rails-assets-font-awesome'
-
-# Enumere listas populares
-gem 'enumerate_it'
-
-# Paginates the data models
-gem 'kaminari'
-
-# Provides a complete base for logins and user control, the best gem for this JOB!
-gem 'devise', :git => 'https://github.com/plataformatec/devise.git', :branch => 'lm-rails-4-2'
-
-# Provides the connection with oauth2
-gem 'omniauth'
-gem 'omniauth-oauth2'
-
-# To get data from Facebook by a connected user by a oAuth2 connection.
-gem 'omniauth-facebook'
-gem 'koala'
-
-# To get data from oAuth2 by a connected user by a oAuth2 connection.
-gem 'omniauth-google-oauth2'
-
-# Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
-# Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.1.0'
-
-# Use jquery as the JavaScript library
-#gem 'jquery-rails'
-
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
+gem 'jquery-rails'
 gem 'turbolinks'
 
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.0'
+gem 'bootstrap-sass', '~> 3.3.1.0'
+gem 'autoprefixer-rails', '~> 4.0.2.2'
 
-# bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'simple_form', '~> 3.1.0'
 
-# Use Capistrano for deployment
-gem 'capistrano-rails', group: :development
+gem 'enumerate_it', '~> 1.2.3'
+gem 'pg', '~> 0.18.1'
 
-# Easy and smart forms!
-gem 'simple_form'
+gem 'devise', :git => 'https://github.com/plataformatec/devise.git', :branch => 'lm-rails-4-2'
+gem 'devise-i18n-views', '~> 0.3.3'
 
-# Country SelecT!
-gem 'country_select'
+gem 'kaminari'
 
-# Use to upload images
 gem 'carrierwave'
 gem 'rmagick'
+gem 'country_select'
+
+gem 'omniauth'
+gem 'omniauth-oauth2'
+gem 'omniauth-facebook'
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  # gem 'byebug'
-
-  # Access an IRB console on exception pages or by using <%= console %> in views
-  # gem 'web-console', '~> 2.0'
-
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'byebug'
   gem 'spring'
+  gem 'capistrano-rails'
+  gem 'binding_of_caller'
+  gem 'meta_request'
+  gem 'quiet_assets'
+
+  gem 'guard'
+  gem 'guard-rspec'
+  gem 'guard-bundler'
+  gem 'guard-livereload'
+  gem 'guard-migrate'
+
+  gem 'rspec-rails', '~> 3.1.0'
+  gem 'shoulda-matchers', '~> 2.7.0'
+  gem 'fuubar', '~> 2.0.0'
+end
+
+group :test do
+  gem 'capybara', '~> 2.4.4'
+  gem 'capybara-screenshot', '~> 1.0.4'
+  gem 'poltergeist', '~> 1.5.1'
+
+  gem 'launchy', '~> 2.4.3'
+  gem 'database_cleaner', '~> 1.4.0'
+  gem 'factory_girl_rails', '~> 4.5.0'
+  gem 'forgery', '~> 0.6.0'
+
+  gem 'simplecov', require: false
+  gem 'codeclimate-test-reporter', require: false
+end
+
+group :production do
+  gem 'rails_12factor'
 end
